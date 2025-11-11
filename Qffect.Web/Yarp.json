@@ -1,0 +1,21 @@
+{
+  "ReverseProxy": {
+    "Routes": {
+      "apiRoute": {
+        "ClusterId": "apiCluster",
+        "Match": {
+          "Path": "/api/{**catch-all}"
+        }
+      }
+    },
+    "Clusters": {
+      "apiCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://localhost:7020/"
+          }
+        }
+      }
+    }
+  }
+}
